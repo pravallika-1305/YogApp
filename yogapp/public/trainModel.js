@@ -5,7 +5,8 @@ let skeleton;
 let brain;
 let state = 'waiting';
 let targetLabel;
-/*function keyPressed(){
+let poseLabel = "Y"
+function keyPressed(){
   if(key == 's'){
     brain.saveData('./values.json')
   } else {
@@ -21,7 +22,7 @@ let targetLabel;
       }, 10000);
     }, 10000);
   }
-}*/
+}
 function setup(){
   createCanvas(640,480);
   video = createCapture(VIDEO);
@@ -35,18 +36,45 @@ function setup(){
     debug: true
   };
   brain = ml5.neuralNetwork(options);
-  brain.loadData('ymca.json',dataReady);
-
-
-
+  const modelInfo = {
+    model : 'modelV1/model.json',
+    metadata : 'modelV1/model_meta.json',
+    weights : 'modelV1/model.weights.bin',
+  };
+  brain.load(modelInfo, brainLoaded);
+  //brain.loadData('ymca.json',dataReady);
 }
+
+function brainLoaded() {
+  console.log("pose classification ready!");
+  classifyPose();
+}
+
+function classifyPose() {
+  if (pose) {
+    let inputs =[];
+    for(let i = 0; i < pose.keypoints.length;i++){
+      let x = pose.keypoints[i].position.x;
+      let y = pose.keypoints[i].position.y;
+      inputs.push(x);
+      inputs.push(y);
+    }
+    brain.classify(inputs, gotResult);
+  } else {
+    setTimeout(classifyPose, 100);
+  }
+}
+
+function gotResult(error, results){
+  poseLabel = results[0].label;
+  console.log(results[0].label);
+  console.log(results[0].confidence);
+  classifyPose();
+}
+
 function dataReady(){
     brain.normalizeData();
     brain.train({epochs:50},finished);
-
-
-
-
 }
 function finished(){
     console.log("Model Trained ");
@@ -74,12 +102,13 @@ function modelLoaded() {
   console.log('poseNet ready');
 }
 
-/*function draw(){
+function draw(){
+  push();
   translate(video.width, 0);
   scale(-1, 1);
   image(video,0,0,video.width, video.height)
   image(video,0,0);
-  /*let eyeR = pose.rightEye;
+  let eyeR = pose.rightEye;
     let eyeL = pose.leftEye;
     let d = dist(eyeR.x,eyeR.y,eyeL.x,eyeL.y);
   fill(255,0,0);
@@ -95,7 +124,13 @@ function modelLoaded() {
     ellipse(x,y,16,16);
   }
   }
+  pop();
+  fill(255, 0, 255);
+  noStroke();
+  textSize(256);
+  textAlign(CENTER, CENTER);
+  text(poseLabel, width / 2, height / 2); 
 
-}*/
+}
 
 
