@@ -63,7 +63,8 @@ function draw(){
   scale(-1, 1);
   image(video,0,0,video.width, video.height)
   image(video,0,0);
-  /*let eyeR = pose.rightEye;
+  /*
+  let eyeR = pose.rightEye;
     let eyeL = pose.leftEye;
     let d = dist(eyeR.x,eyeR.y,eyeL.x,eyeL.y);
   fill(255,0,0);
@@ -77,6 +78,13 @@ function draw(){
     let y = pose.keypoints[i].position.y;
     fill(0,255,0);
     ellipse(x,y,16,16);
+  }
+  for (let i = 0; i < skeleton.length; i++) {
+    let a = skeleton[i][0];
+    let b = skeleton[i][1];
+    strokeWeight(8);
+    stroke(244, 194, 194);
+    line(a.position.x, a.position.y, b.position.x, b.position.y);
   }
   }
 
