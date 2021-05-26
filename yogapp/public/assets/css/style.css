@@ -1,0 +1,224 @@
+body {
+  font-family: "Open Sans", sans-serif;
+  color: #444444;
+  
+  background: rgb(239,244,245);
+background: radial-gradient(circle, rgba(239,244,245,1) 30%, rgba(33,236,237,0.8970938717283788) 50%, rgba(255,255,255,1) 100%);
+}
+
+a {
+  color: #000303;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #11c2da;;
+  text-decoration: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Raleway", sans-serif;
+}
+
+/*--------------------------------------------------------------
+# Back to top button
+--------------------------------------------------------------*/
+.back-to-top {
+  position: fixed;
+  visibility: hidden;
+  opacity: 0;
+  right: 15px;
+  bottom: 15px;
+  z-index: 996;
+  background: #3498db;
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  transition: all 0.4s;
+}
+
+.back-to-top i {
+  font-size: 28px;
+  color: #fff;
+  line-height: 0;
+}
+
+.back-to-top:hover {
+  background: #57aae1;
+  color: #fff;
+}
+
+.back-to-top.active {
+  visibility: visible;
+  opacity: 1;
+}
+
+
+/*--------------------------------------------------------------
+# Portfolio
+--------------------------------------------------------------*/
+.portfolio {
+  padding: 40px ;
+}
+
+.portfolio #portfolio-flters {
+  padding: 0;
+  margin: 0 0 35px 0;
+  list-style: none;
+  text-align: center;
+}
+
+.portfolio #portfolio-flters li {
+  cursor: pointer;
+  margin: 0 15px 15px 0;
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 12px;
+  line-height: 20px;
+  color: #444444;
+  border-radius: 4px;
+  text-transform: uppercase;
+  background: #fff;
+  margin-bottom: 5px;
+  transition: all 0.3s ease-in-out;
+}
+
+.portfolio #portfolio-flters li:hover, .portfolio #portfolio-flters li.filter-active {
+  background: #3498db;
+  color: #fff;
+}
+
+.portfolio #portfolio-flters li:last-child {
+  margin-right: 0;
+}
+
+.portfolio .portfolio-wrap {
+  box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.08);
+  transition: 0.3s;
+}
+
+.portfolio .portfolio-wrap:hover {
+  box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.16);
+}
+
+
+.portfolio .portfolio-item {
+  position: relative;
+  height: 360px;
+  overflow: hidden;
+}
+.portfolio .portfolio-logo {
+  position: relative;
+  height: 360px;
+  overflow: hidden;
+}
+
+.portfolio .portfolio-item figure {
+  background: rgb(255, 255, 255);
+  overflow: hidden;
+  height: 240px;
+  position: relative;
+  border-radius: 4px 4px 0 0;
+  margin: 0;
+}
+.portfolio .portfolio-logo figure {
+  background: rgb(255, 255, 255);
+  overflow: hidden;
+  height: 240px;
+  position: relative;
+  border-radius: 4px 4px 0 0;
+  margin: 0;
+}
+
+.portfolio .portfolio-item figure:hover img {
+  opacity: 0.4;
+  transition: .4s;
+}
+
+
+
+
+.portfolio .portfolio-item figure .link-preview, .portfolio .portfolio-item figure .link-details {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  line-height: 0;
+  text-align: center;
+  width: 100px;
+  height: 100px;
+  background: rgb(19, 201, 233);
+  border-radius: 100%;
+  transition: all .2s linear;
+  overflow: hidden;
+  font-size: 150px;
+}
+
+.portfolio .portfolio-item figure .link-preview i, .portfolio .portfolio-item figure .link-details i {
+  color: #ffffff;
+  line-height: 0;
+}
+
+.portfolio .portfolio-item figure .link-preview:hover, .portfolio .portfolio-item figure .link-details:hover {
+  background: #11c2da;
+}
+
+.portfolio .portfolio-item figure .link-preview:hover i, .portfolio .portfolio-item figure .link-details:hover i {
+  color: #fff;
+}
+
+.portfolio .portfolio-item figure .link-preview {
+  left: calc(50% - 38px);
+  top: calc(50% - 18px);
+}
+
+.portfolio .portfolio-item figure .link-details {
+  right: calc(50% - 38px);
+  top: calc(50% - 18px);
+}
+
+.portfolio .portfolio-item figure:hover .link-preview {
+  opacity: 1;
+  left: calc(50% - 44px);
+}
+
+.portfolio .portfolio-item figure:hover .link-details {
+  opacity: 1;
+  right: calc(50% - 44px);
+}
+
+.portfolio .portfolio-item .portfolio-info {
+  background: #fff;
+  text-align: center;
+  padding: 20px;
+  height: 70px;
+  border-radius: 0 0 3px 3px;
+}
+
+.portfolio .portfolio-item .portfolio-info h4 {
+  font-size: 18px;
+  line-height: 1px;
+  font-weight: 700;
+  margin-bottom: 18px;
+  padding-bottom: 0;
+}
+
+.portfolio .portfolio-item .portfolio-info h4 a {
+  color: #333;
+}
+
+.portfolio .portfolio-item .portfolio-info h4 a:hover {
+  color: #3498db;
+}
+
+.portfolio .portfolio-item .portfolio-info p {
+  padding: 0;
+  margin: 0;
+  color: #b8b8b8;
+  font-weight: 500;
+  font-size: 14px;
+  text-transform: uppercase;
+}
+
+

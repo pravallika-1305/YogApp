@@ -5,7 +5,7 @@ let skeleton;
 let brain;
 let state = 'waiting';
 let targetLabel;
-let poseLabel = "DEFAULT"
+let poseLabel = "def"
 
 function setup(){
   createCanvas(640,480);
