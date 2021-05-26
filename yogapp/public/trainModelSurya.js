@@ -15,12 +15,12 @@ function setup(){
   poseNet.on('pose',gotPoses);
   let options={
     inputs: 34 ,
-    outputs: 4,
+    outputs: 12,
     task: 'classification',
     debug: true
   };
   brain = ml5.neuralNetwork(options);
-  brain.loadData('basics.json',dataReady);
+  brain.loadData('surya.json',dataReady);
 }
 function gotPoses(poses){
  
