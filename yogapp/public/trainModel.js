@@ -38,7 +38,7 @@ function setup(){
     debug: true
   };
   brain = ml5.neuralNetwork(options);
-  brain.loadData('poses.json',dataReady);
+  brain.loadData('basics.json',dataReady);
 }
 function gotPoses(poses){
  
@@ -64,13 +64,6 @@ function brainLoaded() {
 
 
 
-/*function gotResult(error, results){
-  poseLabel = results[0].label;
-  console.log(results);
-  console.log(results[0].label);
-  //console.log(results[0].confidence);
-  classifyPose();
-}*/
 
 function dataReady(){
     brain.normalizeData();

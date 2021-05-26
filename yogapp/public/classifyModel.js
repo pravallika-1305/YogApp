@@ -5,7 +5,7 @@ let skeleton;
 let brain;
 let state = 'waiting';
 let targetLabel;
-let poseLabel = "D"
+let poseLabel = "DEFAULT"
 
 function setup(){
   createCanvas(640,480);
@@ -21,9 +21,9 @@ function setup(){
   };
   brain = ml5.neuralNetwork(options);
   const modelInfo = {
-    model: 'modelV2/model.json',
-    metadata: 'modelV2/model_meta.json',
-    weights: 'modelV2/model.weights.bin',
+    model: 'modelBasic/model.json',
+    metadata: 'modelBasic/model_meta.json',
+    weights: 'modelBasic/model.weights.bin',
   };
   brain.load(modelInfo, brainLoaded);
   
