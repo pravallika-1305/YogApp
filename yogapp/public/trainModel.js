@@ -74,7 +74,7 @@ function brainLoaded() {
 
 function dataReady(){
     brain.normalizeData();
-    brain.train({epochs:50},finished);
+    brain.train({epochs:500},finished);
 }
 function finished(){
     console.log("Model Trained ");

@@ -88,10 +88,16 @@ function draw(){
     fill(0,255,0);
     ellipse(x,y,16,16);
   }
+  for (let i = 0; i < skeleton.length; i++) {
+    let a = skeleton[i][0];
+    let b = skeleton[i][1];
+    strokeWeight(2);
+    stroke(244, 194, 194);
+    line(a.position.x, a.position.y, b.position.x, b.position.y);
+  }
   }
   pop();
   fill(255, 0, 255);
-  noStroke();
   textSize(256);
   textAlign(CENTER, CENTER);
   text(poseLabel, width / 2, height / 2); 
