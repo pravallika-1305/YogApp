@@ -20,7 +20,7 @@ function setup(){
     debug: true
   };
   brain = ml5.neuralNetwork(options);
-  brain.loadData('surya.json',dataReady);
+  brain.loadData('suryaFront.json',dataReady);
 }
 function gotPoses(poses){
  
@@ -41,7 +41,7 @@ function gotPoses(poses){
 
 function dataReady(){
     brain.normalizeData();
-    brain.train({epochs:500},finished);
+    brain.train({epochs:700},finished);
 }
 function finished(){
     console.log("Model Trained ");
