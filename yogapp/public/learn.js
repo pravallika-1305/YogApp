@@ -3,9 +3,9 @@ let poseNet;
 let pose;
 let skeleton;
 let thirtysecs;
-let posesArray = ['Pranamasana (Prayer pose)', 'Hastauttanasana (Raised arms pose)', 'Hastapadasana (Standing forward bend)', 'Ashwa Sanchalanasana (Equestrian pose)', 'Dandasana (Stick pose)', 'Ashtanga Namaskara (Salute with eight parts or points)', 'Bhujangasana (Cobra pose)', 'Adho Mukha Svanasana (Downward facing dog pose)', 'Ashwa Sanchalanasana (Equestrian pose)', 'Hastapadasana (Standing forward bend)', 'Hastauttanasana (Raised arms pose)', 'Tadasana (Mountain Pose)'];
+let posesArray = ['Pranamasana (Prayer pose)', 'Hastauttanasana (Raised arms pose)', 'Hastapadasana (Standing forward bend)', 'Ashwa Sanchalanasana (Equestrian pose)', 'Dandasana (Stick pose)', 'Ashtanga Namaskara (Salute with eight parts or points)', 'Bhujangasana (Cobra pose)', 'Adho Mukha Svanasana (Downward facing dog pose)', 'Ashwa Sanchalanasana (Equestrian pose)', 'Hastapadasana (Standing forward bend)', 'Hastauttanasana (Raised arms pose)', 'Pranamasana (Prayer pose)'];
 var imgArray = new Array();
-let labelArray = ['1', '2', '3', '4', '5', '6', '7', '8', '9', 'v', 'w', 'k'];
+let labelArray = ['1', '2', '3', '4', '5', '6', '7','5', '9','3','2','1'];
 
 var poseImage;
 
@@ -51,7 +51,7 @@ function setup() {
     imgArray[10] = new Image();
     imgArray[10].src = 'assets/img/postures/11.svg';
     imgArray[11] = new Image();
-    imgArray[11].src = 'assets/img/postures/12.svg';
+    imgArray[11].src = 'assets/img/postures/1.svg';
 
     poseCounter = 0;
     labelIndex = 0;
@@ -65,7 +65,7 @@ function setup() {
 
     let options = {
         inputs: 34,
-        outputs: 12,
+        outputs: 8,
         task: 'classification',
         debug: true
     }
@@ -103,7 +103,7 @@ function classifyPose() {
 function gotResult(error, results) {
     document.getElementById("welldone").textContent = "";
     document.getElementById("sparkles").style.display = "none";
-    if (results[0].confidence > 0.80) {
+    if (results[0].confidence > 0.70) {
         poseLabel = results[0].label;
         console.log("Confidence");
         if (results[0].label == labelArray[labelIndex].toString()) {
@@ -195,7 +195,7 @@ function draw(){
   
   
 function nextPose() {
-    if (poseCounter >= 5) {
+    if (poseCounter == 12) {
         console.log("Well done, you have learnt all poses!");
         document.getElementById("finish").textContent = "Amazing!";
         document.getElementById("welldone").textContent = "All poses done.";

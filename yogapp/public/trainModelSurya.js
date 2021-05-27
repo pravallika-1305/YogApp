@@ -11,12 +11,12 @@ function setup(){
   
   let options={
     inputs: 34 ,
-    outputs: 12,
+    outputs: 8,
     task: 'classification',
     debug: true
   };
   brain = ml5.neuralNetwork(options);
-  brain.loadData('suryaFront.json',dataReady);
+  brain.loadData('eliminate.json',dataReady);
 }
 
 
