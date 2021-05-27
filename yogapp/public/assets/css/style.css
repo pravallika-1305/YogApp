@@ -96,7 +96,7 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: 0px 2px 12px rgba(60, 219, 247, 0.815);
   transition: 0.3s;
   background: rgb(52,250,244);
-background: linear-gradient(0deg, rgba(52,250,244,1) 0%, rgba(176,236,237,0.9699230033810399) 45%, rgba(249,249,249,1) 100%);
+background: linear-gradient(0deg, rgba(52,250,244,1) 0%, rgba(176,236,237,0.9699230033810399) 29%, rgba(249,249,249,1) 100%);
   
 }
 
@@ -194,7 +194,7 @@ background: linear-gradient(0deg, rgba(52,250,244,1) 0%, rgba(176,236,237,0.9699
 
 .portfolio .portfolio-item .portfolio-info {
   background: rgb(52,250,244);
-background: linear-gradient(0deg, rgba(52,250,244,1) 0%, rgba(176,236,237,0.9699230033810399) 45%, rgba(249,249,249,1) 100%);
+background: linear-gradient(0deg, rgba(52,250,244,1) 0%, rgba(176,236,237,0.9699230033810399) 29%, rgba(249,249,249,1) 100%);
   text-align: center;
   padding: 20px;
   height: 70px;
