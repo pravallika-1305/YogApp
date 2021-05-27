@@ -5,6 +5,7 @@ let skeleton;
 let brain;
 let state = 'waiting';
 let targetLabel;
+
 function keyPressed(){
   if(key == 's'){
     brain.saveData('./values.json')

@@ -1,0 +1,158 @@
+body {
+    font-family: "Open Sans", sans-serif;
+    color: #444444;
+}
+
+  a {
+    color: #000303;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    color: #11c2da;;
+    text-decoration: none;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Raleway", sans-serif;
+  }
+  
+  /*--------------------------------------------------------------
+  # Back to top button
+  --------------------------------------------------------------*/
+  .back-to-top {
+    position: fixed;
+    visibility: hidden;
+    opacity: 0;
+    right: 15px;
+    bottom: 15px;
+    z-index: 996;
+    background: #3498db;
+    width: 40px;
+    height: 40px;
+    border-radius: 4px;
+    transition: all 0.4s;
+  }
+  
+  .back-to-top i {
+    font-size: 28px;
+    color: #fff;
+    line-height: 0;
+  }
+  
+  .back-to-top:hover {
+    background: #57aae1;
+    color: #fff;
+  }
+  
+  .back-to-top.active {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  
+
+  
+  section {
+    padding: 30px 0;
+  }
+  
+  .section-bg {
+    background-color: #f7fbfe;
+  }
+  
+  .section-title {
+    text-align: center;
+    padding-bottom: 30px;
+  }
+  
+  .section-title h2 {
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    position: relative;
+  }
+  
+  .section-title h2::before {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 120px;
+    height: 1px;
+    background: #ddd;
+    bottom: 1px;
+    left: calc(50% - 60px);
+  }
+  
+  .section-title h2::after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 40px;
+    height: 3px;
+    background: #3498db;
+    bottom: 0;
+    left: calc(50% - 20px);
+  }
+  
+  .section-title p {
+    margin-bottom: 0;
+  }
+  /*--------------------------------------------------------------
+  # Instructions
+  --------------------------------------------------------------*/
+  .what-we-do .icon-box {
+    text-align: center;
+    padding: 10px;
+    transition: all ease-in-out 0.3s;
+    background: #fff;
+
+  }
+  
+  .what-we-do .icon-box .icon {
+    margin: 0 auto;
+    width: 64px;
+    height: 64px;
+    background: #eaf4fb;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 32px;
+    transition: ease-in-out 0.3s;
+  }
+  
+  .what-we-do .icon-box .icon i {
+    color: #3498db;
+    font-size: 28px;
+  }
+  
+  .what-we-do .icon-box h4 {
+    font-weight: 700;
+    margin-bottom: 10px;
+    font-size: 24px;
+  }
+  
+  .what-we-do .icon-box h4 a {
+    color: #384046;
+    transition: ease-in-out 0.3s;
+  }
+  
+  .what-we-do .icon-box p {
+    line-height: 24px;
+    font-size: 14px;
+    margin-bottom: 0;
+  }
+  
+  .what-we-do .icon-box:hover {
+    border-color: #fff;
+    box-shadow: 0px 0 25px 0 rgba(50, 214, 236, 0.918);
+  }
+  
+  .what-we-do .icon-box:hover h4 a, .what-we-do .icon-box:hover .icon i {
+    color: #34c8db;
+  }
+  
+  
+  
