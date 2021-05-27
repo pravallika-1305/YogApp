@@ -63,42 +63,17 @@ body {
   
   .section-title {
     text-align: center;
-    padding-bottom: 30px;
+   
   }
   
   .section-title h2 {
     font-size: 32px;
     font-weight: 600;
-    margin-bottom: 20px;
-    padding-bottom: 20px;
+    margin-bottom: 10px;
+   
     position: relative;
   }
   
-  .section-title h2::before {
-    content: '';
-    position: absolute;
-    display: block;
-    width: 120px;
-    height: 1px;
-    background: #ddd;
-    bottom: 1px;
-    left: calc(50% - 60px);
-  }
-  
-  .section-title h2::after {
-    content: '';
-    position: absolute;
-    display: block;
-    width: 40px;
-    height: 3px;
-    background: #3498db;
-    bottom: 0;
-    left: calc(50% - 20px);
-  }
-  
-  .section-title p {
-    margin-bottom: 0;
-  }
   /*--------------------------------------------------------------
   # Instructions
   --------------------------------------------------------------*/
@@ -119,7 +94,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 32px;
+    margin-bottom: 20px;
     transition: ease-in-out 0.3s;
   }
   
@@ -154,5 +129,17 @@ body {
     color: #34c8db;
   }
   
-  
+  .btn-get-started {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-size: 17px;
+    letter-spacing: 2px;
+    display: inline-block;
+    padding: 12px 28px;
+    border-radius: 4px;
+    transition: ease-in-out 0.3s;
+    color: #3498db;
+    background: #fff ;
+    text-transform: uppercase;
+  }
   
