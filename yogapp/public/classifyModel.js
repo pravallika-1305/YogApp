@@ -58,10 +58,12 @@ function classifyPose() {
 }
 
 function gotResult(error, results){
-  poseLabel = results[0].label;
-  console.log(results);
-  console.log(results[0].label);
-  console.log(results[0].confidence);
+  if(results[0].confidence > 0.80){
+    poseLabel = results[0].label;
+    console.log(results);
+    console.log(results[0].label);
+    console.log(results[0].confidence);
+  }
   classifyPose();
 }
 

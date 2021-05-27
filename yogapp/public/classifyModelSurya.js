@@ -8,7 +8,8 @@ let targetLabel;
 let poseLabel = "def"
 
 function setup(){
-  createCanvas(640,480);
+  var canvas = createCanvas(640, 480);
+  canvas.position(50, 50);
   video = createCapture(VIDEO);
   video.hide();
   poseNet = ml5.poseNet(video, modelLoaded);
@@ -58,10 +59,12 @@ function classifyPose() {
 }
 
 function gotResult(error, results){
-  poseLabel = results[0].label;
-  console.log(results);
-  console.log(results[0].label);
-  console.log(results[0].confidence);
+  if(results[0].confidence > 0.80){
+    poseLabel = results[0].label;
+    console.log(results);
+    console.log(results[0].label);
+    console.log(results[0].confidence);
+  }
   classifyPose();
 }
 
