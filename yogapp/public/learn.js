@@ -3,7 +3,7 @@ let poseNet;
 let pose;
 let skeleton;
 let thirtysecs;
-let posesArray = ['Pranamasana (Prayer pose)', 'Hastauttanasana (Raised arms pose)', 'Hastapadasana (Standing forward bend)', 'Ashwa Sanchalanasana (Equestrian pose)', 'Dandasana (Stick pose)', 'Ashtanga Namaskara (Salute with eight parts or points)', 'Bhujangasana (Cobra pose)', 'Adho Mukha Svanasana (Downward facing dog pose)', 'Ashwa Sanchalanasana (Equestrian pose)', 'Hastapadasana (Standing forward bend)', 'Hastauttanasana (Raised arms pose)', 'Pranamasana (Prayer pose)'];
+let posesArray = ['Pranamasana (Prayer pose)', 'Hastauttanasana (Raised arms pose)', 'Hastapadasana (Standing forward bend)', 'Ashwa Sanchalanasana (Equestrian pose)', 'Adho Mukha Svanasana (Downward facing dog pose)', 'Ashtanga Namaskara (Salute with eight parts or points)', 'Bhujangasana (Cobra pose)', 'Adho Mukha Svanasana (Downward facing dog pose)', 'Ashwa Sanchalanasana (Equestrian pose)', 'Hastapadasana (Standing forward bend)', 'Hastauttanasana (Raised arms pose)', 'Pranamasana (Prayer pose)'];
 var imgArray = new Array();
 let labelArray = ['1', '2', '3', '4', '5', '6', '7', '5', '4', '3', '2', '1'];
 var audioIndex = 0;
@@ -38,7 +38,7 @@ function setup() {
     imgArray[3] = new Image();
     imgArray[3].src = 'assets/img/postures/4.svg';
     imgArray[4] = new Image();
-    imgArray[4].src = 'assets/img/postures/5.svg';
+    imgArray[4].src = 'assets/img/postures/8.svg';
     imgArray[5] = new Image();
     imgArray[5].src = 'assets/img/postures/6.svg';
     imgArray[6] = new Image();
@@ -127,8 +127,7 @@ function classifyPose() {
 }
 
 function gotResult(error, results) {
-    document.getElementById("welldone").textContent = "";
-    document.getElementById("sparkles").style.display = "none";
+   
     if (results[0].confidence > 0.70) {
         poseLabel = results[0].label;
         console.log("Confidence");
@@ -216,23 +215,27 @@ function draw() {
     }
     pop();
     fill(255, 0, 255);
-    textSize(256);
-    textAlign(CENTER, CENTER);
-    text(poseLabel, width / 2, height / 2);
+    //textSize(256);
+    //textAlign(CENTER, CENTER);
+    //text(poseLabel, width / 2, height / 2);
 }
 
 
 
 function nextPose() {
-    if (poseCounter >= 12) {
+
+    if (labelIndex == 11) {
         console.log("Well done, you have learnt all poses!");
-        document.getElementById("finish").textContent = "Amazing!";
-        document.getElementById("welldone").textContent = "All poses done.";
+       document.getElementById("finish").style.display = 'block';
+        document.getElementById("time").style.display = 'none';
+        document.getElementById("seconds").style.display = 'none';
+        document.getElementById("poseName").style.display = 'none';
+        document.getElementById("poseImg").style.display = 'none';
         document.getElementById("sparkles").style.display = 'block';
-        document.getElementById("time").style.visibility = 'hidden';
-        document.getElementById("poseImg").style.visibility = "hidden";
+        canvas.style.visibility = "hidden";
     } else {
         console.log("Well done, you all poses!");
+       
         errorCounter = 0;
         iterationCounter = 0;
         poseCounter = poseCounter + 1;
@@ -241,8 +244,8 @@ function nextPose() {
         console.log("next pose target label" + labelArray[labelIndex])
         target = posesArray[poseCounter];
         document.getElementById("poseName").textContent = target;
-        document.getElementById("welldone").textContent = "Well done, next pose!";
-        document.getElementById("sparkles").style.display = 'block';
+        document.getElementById("welldone").style.display = 'block';
+ 
         document.getElementById("poseImg").src = imgArray[poseCounter].src;
         console.log("classifying again");
         timeLeft = 10;
