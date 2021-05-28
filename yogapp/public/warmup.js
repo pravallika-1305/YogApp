@@ -3,9 +3,9 @@ let poseNet;
 let pose;
 let skeleton;
 let thirtysecs;
-let posesArray = ['Mountain Pose','Chair Pose', 'Puppy dog on Chair','Downward dog','Triangle Pose','Tree Pose'];
+let posesArray = ['Mountain Pose','Chair Pose', 'Downward dog','Triangle Pose','Tree Pose'];
 var imgArray = new Array();
-let labelArray = ['m','c','p','d','t','r'];
+let labelArray = ['m','c','d','t','r'];
 var playlist = new Array();
 var poseImage;
 let yogi;
@@ -32,13 +32,11 @@ function setup() {
     imgArray[1] = new Image();
     imgArray[1].src = 'assets/img/warmup/2.png';
     imgArray[2] = new Image();
-    imgArray[2].src = 'assets/img/warmup/3.png';
+    imgArray[2].src = 'assets/img/warmup/4.png';
     imgArray[3] = new Image();
-    imgArray[3].src = 'assets/img/warmup/4.png';
+    imgArray[3].src = 'assets/img/warmup/5.png';
     imgArray[4] = new Image();
-    imgArray[4].src = 'assets/img/warmup/5.png';
-    imgArray[5] = new Image();
-    imgArray[5].src = 'assets/img/warmup/6.png';
+    imgArray[4].src = 'assets/img/warmup/6.png';
   
     
 
@@ -185,7 +183,7 @@ function draw() {
 
 function nextPose() {
 
-    if (labelIndex == 5) {
+    if (labelIndex == 4) {
         console.log("Well done, you have learnt all poses!");
        document.getElementById("finish").style.display = 'block';
         document.getElementById("time").style.display = 'none';
@@ -209,6 +207,7 @@ function nextPose() {
         target = posesArray[poseCounter];
         document.getElementById("poseName").textContent = target;
         document.getElementById("welldone").style.display = 'block';
+        //document.getElementById("welldone").style.display = 'none';
  
         document.getElementById("poseImg").src = imgArray[poseCounter].src;
         console.log("classifying again");
