@@ -2,8 +2,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>YogApp - Learn</title>
-  <link href="assets/img/yogapp.png" rel="icon">
+  <title>Webcam</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/p5.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.dom.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.sound.min.js"></script>
@@ -14,17 +13,17 @@
     rel="stylesheet">
 
   <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
-  <link href="assets/css/learn.css" rel="stylesheet">
+  <link href="../assets/css/learn.css" rel="stylesheet">
 </head>
 
-<script src="learn.js"></script>
+<script src="../js/warmup.js"></script>
 
 <body>
   <section id="about" class="about"
@@ -36,30 +35,31 @@
         <div class="col-lg-6">
         </div>
         <div class="col-lg-6 text-center">
-          <h1 id="poseName" style="color: rgb(30, 197, 219);font-size: 50px;">Pranamasana (Prayer pose)</h1>
-          <div class="row">
-
           <div class="container">
             <h1 id="finish" style="color: rgb(30, 197, 219);font-size: 50px;display:none;">Amazing! You got all poses right!! </h1>
             <h1 id="welldone" style="color: rgb(30, 197, 219);font-size: 50px;display:none;">Well Done!! Next Pose!</h1>
-            <img src="assets/img/sparkles.gif" id="sparkles" style="display: none;">
+            <img src="../assets/img/sparkles.gif" id="sparkles" style="display: none;">
           </div>
-            <div class="col"><img id="poseImg" src="assets/img/postures/1.svg"
+          <div class="row">
+            <h1 id="poseName" style="color: rgb(30, 197, 219);font-size: 50px;">Mountain Pose</h1>
+          
+            <div class="col"><img id="poseImg" src="../assets/img/warmup/1.png"
                 style="width:340px; height:340px;padding:20px">
             </div>
           </div>
+          
 
           <h1 style="font-size: 100px; top:520px; left:1000px;"><span id="time">00:10</span></h1>
           <h1 style="font-size: 40px; top:630px; left:960px"><span id="seconds">seconds left to hold</span></h1>
           
         </div>
         <div class="row" style="align-items: stretch;">
-          <div class="col"><a href="instructionsLearn.html" class="btn-get-started scrollto"> <i style="font-size:25px;"
+          <div class="col"><a href="instructionsWarmup.html" class="btn-get-started scrollto"> <i style="font-size:25px;"
                 class="bi bi-arrow-left-circle-fill"></i>&nbsp;&nbsp;Back</a>
           </div>
           <div>
-            <audio id= "player" controls autoplay hidden>
-             <source src="assets/audio/start.mp3" type="audio/mpeg">
+            <audio id= "player" controls autoplay loop hidden>
+             <source src="../assets/audio/warmup.mp3" type="audio/mpeg">
               "Not Supported"
             </audio>
         </div>

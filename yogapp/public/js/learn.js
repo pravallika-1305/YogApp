@@ -30,54 +30,54 @@ function setup() {
     poseNet.on('pose', gotPoses);
 
     imgArray[0] = new Image();
-    imgArray[0].src = 'assets/img/postures/1.svg';
+    imgArray[0].src = '../assets/img/postures/1.svg';
     imgArray[1] = new Image();
-    imgArray[1].src = 'assets/img/postures/2.svg';
+    imgArray[1].src = '../assets/img/postures/2.svg';
     imgArray[2] = new Image();
-    imgArray[2].src = 'assets/img/postures/3.svg';
+    imgArray[2].src = '../assets/img/postures/3.svg';
     imgArray[3] = new Image();
-    imgArray[3].src = 'assets/img/postures/4.svg';
+    imgArray[3].src = '../assets/img/postures/4.svg';
     imgArray[4] = new Image();
-    imgArray[4].src = 'assets/img/postures/8.svg';
+    imgArray[4].src = '../assets/img/postures/8.svg';
     imgArray[5] = new Image();
-    imgArray[5].src = 'assets/img/postures/6.svg';
+    imgArray[5].src = '../assets/img/postures/6.svg';
     imgArray[6] = new Image();
-    imgArray[6].src = 'assets/img/postures/7.svg';
+    imgArray[6].src = '../assets/img/postures/7.svg';
     imgArray[7] = new Image();
-    imgArray[7].src = 'assets/img/postures/8.svg';
+    imgArray[7].src = '../assets/img/postures/8.svg';
     imgArray[8] = new Image();
-    imgArray[8].src = 'assets/img/postures/9.svg';
+    imgArray[8].src = '../assets/img/postures/9.svg';
     imgArray[9] = new Image();
-    imgArray[9].src = 'assets/img/postures/10.svg';
+    imgArray[9].src = '../assets/img/postures/10.svg';
     imgArray[10] = new Image();
-    imgArray[10].src = 'assets/img/postures/11.svg';
+    imgArray[10].src = '../assets/img/postures/11.svg';
     imgArray[11] = new Image();
-    imgArray[11].src = 'assets/img/postures/1.svg';
+    imgArray[11].src = '../assets/img/postures/1.svg';
 
     playlist[0] = new Audio();
-    playlist[0].src = 'assets/audio/1.mp3';
+    playlist[0].src = '../assets/audio/1.mp3';
     playlist[1] = new Audio();
-    playlist[1].src = 'assets/audio/2.mp3';
+    playlist[1].src = '../assets/audio/2.mp3';
     playlist[2] = new Audio();
-    playlist[2].src = 'assets/audio/3.mp3';
+    playlist[2].src = '../assets/audio/3.mp3';
     playlist[3] = new Audio();
-    playlist[3].src = 'assets/audio/4.mp3';
+    playlist[3].src = '../assets/audio/4.mp3';
     playlist[4] = new Audio();
-    playlist[4].src = 'assets/audio/5.mp3';
+    playlist[4].src = '../assets/audio/5.mp3';
     playlist[5] = new Audio();
-    playlist[5].src = 'assets/audio/6.mp3';
+    playlist[5].src = '../assets/audio/6.mp3';
     playlist[6] = new Audio();
-    playlist[6].src = 'assets/audio/7.mp3';
+    playlist[6].src = '../assets/audio/7.mp3';
     playlist[7] = new Audio();
-    playlist[7].src = 'assets/audio/8.mp3';
+    playlist[7].src = '../assets/audio/8.mp3';
     playlist[8] = new Audio();
-    playlist[8].src = 'assets/audio/9.mp3';
+    playlist[8].src = '../assets/audio/9.mp3';
     playlist[9] = new Audio();
-    playlist[9].src = 'assets/audio/10.mp3';
+    playlist[9].src = '../assets/audio/10.mp3';
     playlist[10] = new Audio();
-    playlist[10].src = 'assets/audio/11.mp3';
+    playlist[10].src = '../assets/audio/11.mp3';
     playlist[11] = new Audio();
-    playlist[11].src = 'assets/audio/12.mp3';
+    playlist[11].src = '../assets/audio/12.mp3';
 
 
     poseCounter = 0;
@@ -98,9 +98,9 @@ function setup() {
 
     yogi = ml5.neuralNetwork(options);
     const modelInfo = {
-        model: 'modelSuryaFront/model.json',
-        metadata: 'modelSuryaFront/model_meta.json',
-        weights: 'modelSuryaFront/model.weights.bin',
+        model: '../models/odelSuryaFront/model.json',
+        metadata: '../models/odelSuryaFront/model_meta.json',
+        weights: '../models/odelSuryaFront/model.weights.bin',
     };
     yogi.load(modelInfo, yogiLoaded);
 }

@@ -28,15 +28,15 @@ function setup() {
     poseNet.on('pose', gotPoses);
 
     imgArray[0] = new Image();
-    imgArray[0].src = 'assets/img/warmup/1.png';
+    imgArray[0].src = '../assets/img/warmup/1.png';
     imgArray[1] = new Image();
-    imgArray[1].src = 'assets/img/warmup/2.png';
+    imgArray[1].src = '../assets/img/warmup/2.png';
     imgArray[2] = new Image();
-    imgArray[2].src = 'assets/img/warmup/4.png';
+    imgArray[2].src = '../assets/img/warmup/4.png';
     imgArray[3] = new Image();
-    imgArray[3].src = 'assets/img/warmup/5.png';
+    imgArray[3].src = '../assets/img/warmup/5.png';
     imgArray[4] = new Image();
-    imgArray[4].src = 'assets/img/warmup/6.png';
+    imgArray[4].src = '../assets/img/warmup/6.png';
   
     
 
@@ -59,9 +59,9 @@ function setup() {
 
     yogi = ml5.neuralNetwork(options);
     const modelInfo = {
-        model: 'modelBasic/model.json',
-        metadata: 'modelBasic/model_meta.json',
-        weights: 'modelBasic/model.weights.bin',
+        model: '../models/odelBasic/model.json',
+        metadata: '../models/odelBasic/model_meta.json',
+        weights: '../models/odelBasic/model.weights.bin',
     };
     yogi.load(modelInfo, yogiLoaded);
 }
