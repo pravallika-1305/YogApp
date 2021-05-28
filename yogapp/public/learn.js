@@ -229,8 +229,8 @@ function nextPose() {
         document.getElementById("finish").textContent = "Amazing!";
         document.getElementById("welldone").textContent = "All poses done.";
         document.getElementById("sparkles").style.display = 'block';
-        document.getElementById("time").style.display = 'none';
-        document.getElementById("poseImg").visibility = "hidden";
+        document.getElementById("time").style.visibility = 'hidden';
+        document.getElementById("poseImg").style.visibility = "hidden";
     } else {
         console.log("Well done, you all poses!");
         errorCounter = 0;
