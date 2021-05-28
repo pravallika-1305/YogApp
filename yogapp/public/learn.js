@@ -5,7 +5,7 @@ let skeleton;
 let thirtysecs;
 let posesArray = ['Pranamasana (Prayer pose)', 'Hastauttanasana (Raised arms pose)', 'Hastapadasana (Standing forward bend)', 'Ashwa Sanchalanasana (Equestrian pose)', 'Dandasana (Stick pose)', 'Ashtanga Namaskara (Salute with eight parts or points)', 'Bhujangasana (Cobra pose)', 'Adho Mukha Svanasana (Downward facing dog pose)', 'Ashwa Sanchalanasana (Equestrian pose)', 'Hastapadasana (Standing forward bend)', 'Hastauttanasana (Raised arms pose)', 'Pranamasana (Prayer pose)'];
 var imgArray = new Array();
-let labelArray = ['1', '2', '3', '4', '5', '6', '7','5', '9','3','2','1'];
+let labelArray = ['1', '2', '3', '4', '5', '6', '7', '5', '4', '3', '2', '1'];
 
 var poseImage;
 
@@ -160,52 +160,54 @@ function gotPoses(poses) {
 }
 
 function modelLoaded() {
-    document.getElementById("rectangle").style.display = "none";
+    //document.getElementById("rectangle").style.display = "none";
     console.log('poseNet ready');
 }
 
-function draw(){
-    push(); 
+function draw() {
+    push();
     translate(video.width, 0);
     scale(-1, 1);
-    image(video,0,0,video.width, video.height)
-    image(video,0,0);
-    if(pose) {
-    for(let i = 0; i < pose.keypoints.length;i++){
-      let x = pose.keypoints[i].position.x;
-      let y = pose.keypoints[i].position.y;
-      fill(0,255,0);
-      ellipse(x,y,16,16);
-    }
-    for (let i = 0; i < skeleton.length; i++) {
-      let a = skeleton[i][0];
-      let b = skeleton[i][1];
-      strokeWeight(2);
-      stroke(244, 194, 194);
-      line(a.position.x, a.position.y, b.position.x, b.position.y);
-    }
+    image(video, 0, 0, video.width, video.height)
+    image(video, 0, 0);
+    if (pose) {
+        for (let i = 0; i < pose.keypoints.length; i++) {
+            let x = pose.keypoints[i].position.x;
+            let y = pose.keypoints[i].position.y;
+            fill(0, 255, 0);
+            ellipse(x, y, 16, 16);
+        }
+        for (let i = 0; i < skeleton.length; i++) {
+            let a = skeleton[i][0];
+            let b = skeleton[i][1];
+            strokeWeight(2);
+            stroke(244, 194, 194);
+            line(a.position.x, a.position.y, b.position.x, b.position.y);
+        }
     }
     pop();
     fill(255, 0, 255);
     textSize(256);
     textAlign(CENTER, CENTER);
-    text(poseLabel, width / 2, height / 2); 
-  }
-  
-  
-  
+    text(poseLabel, width / 2, height / 2);
+}
+
+
+
 function nextPose() {
-    if (poseCounter == 12) {
+    if (poseCounter >= 12) {
         console.log("Well done, you have learnt all poses!");
         document.getElementById("finish").textContent = "Amazing!";
         document.getElementById("welldone").textContent = "All poses done.";
         document.getElementById("sparkles").style.display = 'block';
+        document.getElementById("time").style.display = 'none';
+        document.getElementById("poseImg").visibility = "hidden";
     } else {
         console.log("Well done, you all poses!");
         errorCounter = 0;
         iterationCounter = 0;
         poseCounter = poseCounter + 1;
-        labelIndex = poseCounter + 1;
+        labelIndex = labelIndex + 1;
         console.log("next pose target label" + labelArray[labelIndex])
         target = posesArray[poseCounter];
         document.getElementById("poseName").textContent = target;
@@ -215,6 +217,6 @@ function nextPose() {
         console.log("classifying again");
         timeLeft = 10;
         document.getElementById("time").textContent = "00:" + timeLeft;
-        setTimeout(classifyPose, 4000)
+        setTimeout(classifyPose, 100)
     }
 }
