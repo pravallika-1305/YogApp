@@ -8,4 +8,62 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.9.0/addons/p5.sound.min.js"></script>
   <script src="https://unpkg.com/ml5@0.6.1/dist/ml5.min.js" type="text/javascript"></script>
 
-  <script src="classifyModelSurya.js"></script>
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/practice.css" rel="stylesheet">
+</head>
+
+<script src="practice.js"></script>
+
+<body>
+  <section id="about" class="about"
+    style="background: rgb(147,255,252);
+  background: linear-gradient(0deg, rgba(147,255,252,1) 2%, rgba(225,249,250,0.9699230033810399) 24%, rgba(255,255,255,1) 100%);">
+    <div class="container text-center">
+
+      <div class="row">
+        <h1 id="poseName" style="color: rgb(30, 197, 219);font-size: 40px;">Pranamasana (Prayer pose)</h1>
+      </div>
+
+      <div class="container">
+        <h1 id="finish" style="color: rgb(30, 197, 219);font-size: 50px;display:none;">Amazing! You got all poses
+          right!! </h1>
+        <h1 id="welldone" style="color: rgb(30, 197, 219);font-size: 50px;display:none;">Well Done!! Next Pose!</h1>
+        <img src="assets/img/sparkles.gif" id="sparkles" style="display: none;">
+      </div>
+      <div class="col"><img id="poseImg" src="assets/img/postures/1.svg" style="height:440px;visibility: hidden;">
+      </div>
+
+      <div class="row">
+        <h1 style="font-size: 80px; padding-top:30px; top:600px;"><span id="time">00:20</span></h1>
+        <h1 style="font-size: 30px; top:700px;"><span id="seconds">seconds left to hold</span></h1>
+
+      </div>
+      <div class="row" style="align-items: stretch;">
+        <div class="col"><a href="instructionsLearn.html" class="btn-get-started scrollto"> <i style="font-size:25px;"
+              class="bi bi-arrow-left-circle-fill"></i>&nbsp;&nbsp;Back</a>
+        </div>
+        <div>
+          <audio id="player" controls autoplay hidden>
+            <source src="assets/audio/start.mp3" type="audio/mpeg">
+            "Not Supported"
+          </audio>
+        </div>
+      </div>
+    </div><br>
+
+  </section>
+
+</body>
+
+</html>
