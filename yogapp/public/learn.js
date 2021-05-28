@@ -6,7 +6,8 @@ let thirtysecs;
 let posesArray = ['Pranamasana (Prayer pose)', 'Hastauttanasana (Raised arms pose)', 'Hastapadasana (Standing forward bend)', 'Ashwa Sanchalanasana (Equestrian pose)', 'Dandasana (Stick pose)', 'Ashtanga Namaskara (Salute with eight parts or points)', 'Bhujangasana (Cobra pose)', 'Adho Mukha Svanasana (Downward facing dog pose)', 'Ashwa Sanchalanasana (Equestrian pose)', 'Hastapadasana (Standing forward bend)', 'Hastauttanasana (Raised arms pose)', 'Pranamasana (Prayer pose)'];
 var imgArray = new Array();
 let labelArray = ['1', '2', '3', '4', '5', '6', '7', '5', '4', '3', '2', '1'];
-
+var audioIndex = 0;
+var playlist = new Array();
 var poseImage;
 
 let yogi;
@@ -53,6 +54,32 @@ function setup() {
     imgArray[11] = new Image();
     imgArray[11].src = 'assets/img/postures/1.svg';
 
+    playlist[0] = new Audio();
+    playlist[0].src = 'assets/audio/1.mp3';
+    playlist[1] = new Audio();
+    playlist[1].src = 'assets/audio/2.mp3';
+    playlist[2] = new Audio();
+    playlist[2].src = 'assets/audio/3.mp3';
+    playlist[3] = new Audio();
+    playlist[3].src = 'assets/audio/4.mp3';
+    playlist[4] = new Audio();
+    playlist[4].src = 'assets/audio/5.mp3';
+    playlist[5] = new Audio();
+    playlist[5].src = 'assets/audio/6.mp3';
+    playlist[6] = new Audio();
+    playlist[6].src = 'assets/audio/7.mp3';
+    playlist[7] = new Audio();
+    playlist[7].src = 'assets/audio/8.mp3';
+    playlist[8] = new Audio();
+    playlist[8].src = 'assets/audio/9.mp3';
+    playlist[9] = new Audio();
+    playlist[9].src = 'assets/audio/10.mp3';
+    playlist[10] = new Audio();
+    playlist[10].src = 'assets/audio/11.mp3';
+    playlist[11] = new Audio();
+    playlist[11].src = 'assets/audio/12.mp3';
+
+
     poseCounter = 0;
     labelIndex = 0;
     target = posesArray[poseCounter];
@@ -62,7 +89,6 @@ function setup() {
     errorCounter = 0;
     iterationCounter = 0;
     document.getElementById("poseImg").src = imgArray[poseCounter].src;
-
     let options = {
         inputs: 34,
         outputs: 8,
@@ -109,6 +135,9 @@ function gotResult(error, results) {
         if (results[0].label == labelArray[labelIndex].toString()) {
             console.log(labelArray[labelIndex]);
             iterationCounter = iterationCounter + 1;
+            if(iterationCounter == 1){
+            document.getElementById("player").src = playlist[audioIndex].src;
+            }
             console.log(iterationCounter)
             if (iterationCounter == 10) {
                 console.log("30!")
@@ -208,6 +237,7 @@ function nextPose() {
         iterationCounter = 0;
         poseCounter = poseCounter + 1;
         labelIndex = labelIndex + 1;
+        audioIndex = audioIndex + 1;
         console.log("next pose target label" + labelArray[labelIndex])
         target = posesArray[poseCounter];
         document.getElementById("poseName").textContent = target;
