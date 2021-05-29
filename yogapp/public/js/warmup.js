@@ -59,9 +59,9 @@ function setup() {
 
     yogi = ml5.neuralNetwork(options);
     const modelInfo = {
-        model: '../models/odelBasic/model.json',
-        metadata: '../models/odelBasic/model_meta.json',
-        weights: '../models/odelBasic/model.weights.bin',
+        model: '../models/modelBasic/model.json',
+        metadata: '../models/modelBasic/model_meta.json',
+        weights: '../models/modelBasic/model.weights.bin',
     };
     yogi.load(modelInfo, yogiLoaded);
 }

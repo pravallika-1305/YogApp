@@ -98,9 +98,9 @@ function setup() {
 
     yogi = ml5.neuralNetwork(options);
     const modelInfo = {
-        model: '../models/odelSuryaFront/model.json',
-        metadata: '../models/odelSuryaFront/model_meta.json',
-        weights: '../models/odelSuryaFront/model.weights.bin',
+        model: '../models/modelSuryaFront/model.json',
+        metadata: '../models/modelSuryaFront/model_meta.json',
+        weights: '../models/modelSuryaFront/model.weights.bin',
     };
     yogi.load(modelInfo, yogiLoaded);
 }
